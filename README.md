@@ -41,7 +41,7 @@ x = A\b
 
 #### n° 5.
 ```scilab
-err_avant = norm(xex-x)/norm(xex)				// 5.700D-16
+err_avant = norm(xex-x)/norm(xex)		// 5.700D-16
 err_arriere = norm(b-A*x)/(norm(A) * norm(x)) 	// 5.581D-17
 ```
 Sur ces matrices rand, l'erreur avant est généralement plus grande que l'erreur arrière.
