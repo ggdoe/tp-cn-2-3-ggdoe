@@ -69,7 +69,7 @@ endfunction
 | 2000 | 6.1 s       | 1.850D-11  | 2.035D-15    |
 
 Pour `n = 10000` le calcul prend plus de 10 minutes.<br>
-En moyenne l'*erreur avant* diminue quand n augmente.
+En moyenne l'*erreur avant* augmente quand n augmente.
 
 ### Exercice 8.
  - *matmat3b*
@@ -127,12 +127,12 @@ endfunction
 > *Les résultats sont répété plusieurs fois puis moyennés.*<br>
 
 Les performances sont fortement dégradées par les boucles imbriquées.<br>
-La complexité temporelle des algorithmes est théoriquement la même pour tous de l'ordre de *O(n<sup>3</sup>)*, cependant Scilab gère mieux nativement les produits de matrices/scalaire que lorsqu'on le fait soit même.<br>
+La complexité temporelle des algorithmes est théoriquement la même pour tous de l'ordre de *O(n<sup>3</sup>)*, 
+cependant Scilab gère mieux nativement les produits de matrices/scalaire que lorsqu'on le fait soit même.<br>
 Il faut prioriser l'usage des `:` plutôt que faire de multiples boucles, quand c'est possible.
 
 ## TP - 3
 ### Exercice 2.
-
  - *usolve*
 ```scilab
 function [x] = usolve(U,b)
@@ -189,7 +189,7 @@ Pour `n > 100` les deux algorithmes l'erreur avant explose.
 
 
 ### Exercice 3.
-
+ - *gausskij3b*
 ```scilab
 function [x] = gausskij3b(A,b)
     n = size(A)(1)
@@ -217,10 +217,9 @@ endfunction
 > *Les résultats sont répété plusieurs fois puis moyennés.*<br>
 
 Même pour `n = 100`, l'erreur avant ne diverge généralement pas (pour des matrices aléatoires).
-On remarque le temps d'exécution de `\` est négligeable devant celui de `gausskij3b`.
+On remarque le temps d'exécution de `\` est négligeable devant celui de `gausskij3b` à cause des 3 boucles.
 
 ### Exercice 4.
-
  - *mylu3b*
 ```scilab
 function [L,U] = mylu3b(A)
@@ -240,18 +239,7 @@ function [L,U] = mylu3b(A)
 endfunction
 ```
 
-| n    | temps exec.  | `norm(A-LU)` |
-| ---: | -----------: | ------------ |
-| 4    | 0.16ms       | 1.332D-16    |
-| 10   | 2.27ms       | 1.837D-15    |
-| 30   | 61.2ms       | 9.462D-14    |
-| 50   | 0.27s        | 4.661D-14    |
-| 100  | 1.74s        | 1.239D-13    |
-
-> *Les résultats sont répété plusieurs fois puis moyennés.*<br>
-
  - *mylu1b*
-
 ```scilab
 function [L,U] = mylu1b(A)
     n = size(A)(1)
@@ -274,8 +262,9 @@ endfunction
 
 > *Les résultats sont répété plusieurs fois puis moyennés.*<br>
 
+La méthode à 3 boucle est bien plus lente que celle à 1 boucle, la précision reste la même car le calcule est identique.
+
  - *mylu*
- 
 ```scilab
 function [L,U,P] = mylu(A)
     n = size(A)(1)
@@ -300,7 +289,6 @@ endfunction
 ```
 
  - *fonction de test*
- 
  ```scilab
  function [] = perf_mylu(n, nb_loop)
     time = 0; err = 0;
@@ -313,7 +301,7 @@ endfunction
     disp("Erreur : " + string(err/nb_loop))
     disp("Temps exec. : " + string(time/nb_loop))
 endfunction
- ```
+```
 
 | n    | `mylu`, temps exec.  | `mylu`, `norm(A-LU)/norm(A)` |  `lu`, temps exec. | `lu`, `norm(A-LU)/norm(A)` |
 | ---: | -------------------: | ---------------------------- | ------------------ | -------------------------- |
