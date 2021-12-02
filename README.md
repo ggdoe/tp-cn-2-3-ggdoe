@@ -175,7 +175,7 @@ La différence de temps d'exécution entre `usolve` (ou `lsolve`) et `\` est de 
 
 La moyenne classique n'est pas très pratique pour calculer l'*erreur avant* quand elle est instable, 
 les gros nombres *faussent* le résultat, <br>
-On peut à la place moyenné le `log` de l'erreur puis prendre l'`exp` :
+À la place on peut moyenner l'exposant (moyenne des `log` puis on prend l'`exp`) :
 
 | n    | err. avant |
 | ---: | ---------: |
