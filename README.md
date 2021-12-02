@@ -1,4 +1,7 @@
 # Rapport TP - Calcul Numérique - Grégoire DOEBELE
+
+Prise en main de Scilab et mesure de performance d'algorithmes naïf comparé à ceux utiliser par Scilab nativement.
+
 ## TP - 2
 ### Exercice 6.
 #### n° 1. 2. 3.
