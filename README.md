@@ -168,10 +168,10 @@ endfunction
 Pour `n < 30` les deux algorithmes converge très souvent vers le vecteur de référence `x = A\b`.<br>
 L'erreur avant est généralement de l'ordre de 10<sup>-15</sup> mais atteint occasionnelement 10<sup>+9</sup>.<br>
 L'erreur arrière est de l'ordre de 10<sup>-18</sup>.<br>
-La différence de temps d'éxecution entre `usolve` (ou `lsolve`) et `\` est de l'ordre de `+0.01ms`.<br>
+La différence de temps d'exécution entre `usolve` (ou `lsolve`) et `\` est de l'ordre de `+0.01ms`.<br>
 
 La moyenne classique n'est pas très pratique pour calculer l'*erreur avant* quand elle est instable, 
-les gros nombres *fausse* le resultat, <br>
+les gros nombres *faussent* le résultat, <br>
 On peut à la place moyenné le `log` de l'erreur puis prendre l'`exp` :
 
 | n    | err. avant |
@@ -213,11 +213,11 @@ endfunction
 | 30   | 48.7ms       | 48.8ms      | 3.591D-13  | 2.953D-15    |
 | 100  | 1.12s        | 1.12s       | 1.361D-12  | 4.284D-15    |
 
-> *`Δtemps exec.` : différence de temps d'execution entre la fonction `gausskij3b` et `\`*<br>
+> *`Δtemps exec.` : différence de temps d'exécution entre la fonction `gausskij3b` et `\`*<br>
 > *Les résultats sont répété plusieurs fois puis moyennés.*<br>
 
 Même pour `n = 100`, l'erreur avant ne diverge généralement pas (pour des matrices aléatoires).
-On remarque le temps d'execution de `\` est négligeable devant celui de `gausskij3b`.
+On remarque le temps d'exécution de `\` est négligeable devant celui de `gausskij3b`.
 
 ### Exercice 4.
 
