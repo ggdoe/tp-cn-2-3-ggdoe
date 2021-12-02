@@ -2,7 +2,7 @@
 ## TP - 2
 ### Exercice 6.
 #### n° 1. 2. 3.
-```javascript
+```scilab
 x = [1  4  8  16]
 y = [8; 19; 2; 1]
 s = x * y 	// 116
@@ -11,7 +11,7 @@ z = x + y
 `z` ne passe pas car x et y n'ont pas la même dimension<br>
 par contre `z = x' + y` ou `z = x + y'` fonctionne.
 #### n° 4. 5. 6. 7.
-```javascript
+```scilab
 size(x) 	// 1.	4.
 size(y) 	// 4.	1.
 norm(x) 	// 18.357560
@@ -19,7 +19,7 @@ A = [1 9 8 ; 7 4 1 ; 2 6 8 ; 1 7 0]
 A'
 ```
 #### n° 8. 9.
-```javascript
+```scilab
 A = [7 1 11 10 ; 2 6 5 2 ; 8 11 3 8 ; 6 9 3 6]
 B = [1 1 7 -6 ; 0 7 11 3 ; 2 4 7 0 ; 15 3 3 4]
 A+B
@@ -31,7 +31,7 @@ Cette matrice (prise sur wikipedia) est mal conditionnée.
 
 ### Exercice 7.
 #### n° 1. 2. 3. 4.
-```javascript
+```scilab
 A = rand(3,3)
 xex = rand(3,1) 	// vecteur colonne
 b = A*xex
@@ -40,14 +40,14 @@ x = A\b
 `xex` possède 3 lignes et 1 colonne.
 
 #### n° 5.
-```javascript
+```scilab
 err_avant = norm(xex-x)/norm(xex)				// 5.700D-16
 err_arriere = norm(b-A*x)/(norm(A) * norm(x)) 	// 5.581D-17
 ```
 Sur ces matrices rand, l'erreur avant est généralement plus grande que l'erreur arrière.
 
 #### n° 6.
-```lua
+```scilab
 function [] = fn_ex7(n)
 	tic()
 	A = rand(n,n); xex = rand(n,1)
@@ -73,7 +73,7 @@ En moyenne l'*erreur avant* diminue quand n augmente.
 
 ### Exercice 8.
  - *matmat3b*
-```lua
+```scilab
 function [C] = matmat3b(A,B)
 	C = zeros(size(A)(1), size(B)(2))
 	for i = 1:size(A)(1)
@@ -86,7 +86,7 @@ function [C] = matmat3b(A,B)
 endfunction
 ```
  - *matmat2b*
-```lua
+```scilab
 function [C] = matmat2b(A,B)
     C = zeros(size(A)(1), size(B)(2))
     for i = 1:size(A)(1)
@@ -97,7 +97,7 @@ function [C] = matmat2b(A,B)
 endfunction
 ```
  - *matmat1b*
-```lua
+```scilab
 function [C] = matmat1b(A,B)
     C = zeros(size(A)(1), size(B)(2))
     for i = 1:size(A)(1)
@@ -106,7 +106,7 @@ function [C] = matmat1b(A,B)
 endfunction
 ```
 #### Performances
-```lua
+```scilab
 function [m] = perf_matmat(n, nb_loop)
     times = zeros(nb_loop,1)
     for i=1:nb_loop
@@ -134,7 +134,7 @@ Il faut prioriser l'usage des `:` plutôt que faire de multiples boucles, quand 
 ### Exercice 2.
 
  - *usolve*
-```lua
+```scilab
 function [x] = usolve(U,b)
     n = size(b)(1)
     x = zeros(n,1)
@@ -145,7 +145,7 @@ function [x] = usolve(U,b)
 endfunction
 ```
  - *lsolve*
-```lua
+```scilab
 function [x] = lsolve(L,b)
     n = size(b)(1)
     x = zeros(n,1)
@@ -190,7 +190,7 @@ Pour `n > 100` les deux algorithmes l'erreur avant explose.
 
 ### Exercice 3.
 
-```lua
+```scilab
 function [x] = gausskij3b(A,b)
     n = size(A)(1)
     for k=1:n-1
@@ -222,7 +222,7 @@ On remarque le temps d'execution de `\` est négligeable devant celui de `gaussk
 ### Exercice 4.
 
  - *mylu3b*
-```lua
+```scilab
 function [L,U] = mylu3b(A)
     n = size(A)(1)
     for k = 1 : n-1
@@ -252,7 +252,7 @@ endfunction
 
  - *mylu1b*
 
-```lua
+```scilab
 function [L,U] = mylu1b(A)
     n = size(A)(1)
     for k = 1 : n-1
@@ -276,7 +276,7 @@ endfunction
 
  - *mylu*
  
-```lua
+```scilab
 function [L,U,P] = mylu(A)
     n = size(A)(1)
     P = eye(A)
@@ -301,7 +301,7 @@ endfunction
 
  - *fonction de test*
  
- ```lua
+ ```scilab
  function [] = perf_mylu(n, nb_loop)
     time = 0; err = 0;
     for i=1:nb_loop
