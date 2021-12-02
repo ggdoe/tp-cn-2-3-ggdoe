@@ -262,7 +262,7 @@ endfunction
 
 > *Les résultats sont répété plusieurs fois puis moyennés.*<br>
 
-La méthode à 3 boucle est bien plus lente que celle à 1 boucle, la précision reste la même car le calcule est identique.
+La méthode à 3 boucle est bien plus lente que celle à 1 boucle, la précision reste la même car le calcul est identique.
 
  - *mylu*
 ```scilab
