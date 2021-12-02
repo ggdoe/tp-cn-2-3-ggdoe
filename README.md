@@ -315,13 +315,13 @@ endfunction
 endfunction
  ```
 
-| n    | temps exec. , `mylu` | `norm(A-LU)/norm(A)`, `mylu` |  temps exec. , `lu`  | `norm(A-LU)/norm(A)` , `mylu` |
-| ---: | -------------------: | ---------------------------- | -------------------- | ----------------------------- |
-| 4    | 0.26ms               | 1.962D-17                    | 0.01ms               | 0.3479102                     |
-| 10   | 0.88ms               | 6.185D-17                    | 0.01ms               | 0.4571869                     |
-| 30   | 3.12ms               | 9.030D-17                    | 0.02ms               | 0.3075666                     |
-| 50   | 6.32ms               | 1.036D-16                    | 0.06ms               | 0.2460342                     |
-| 100  | 19.8ms               | 1.235D-16                    | 0.25ms               | 0.1789988                     |
+| n    | `mylu`, temps exec.  | `mylu`, `norm(A-LU)/norm(A)` |  `lu`, temps exec. | `lu`, `norm(A-LU)/norm(A)` |
+| ---: | -------------------: | ---------------------------- | ------------------ | -------------------------- |
+| 4    | 0.26ms               | 1.962D-17                    | 0.01ms             | 0.3479102                  |
+| 10   | 0.88ms               | 6.185D-17                    | 0.01ms             | 0.4571869                  |
+| 30   | 3.12ms               | 9.030D-17                    | 0.02ms             | 0.3075666                  |
+| 50   | 6.32ms               | 1.036D-16                    | 0.06ms             | 0.2460342                  |
+| 100  | 19.8ms               | 1.235D-16                    | 0.25ms             | 0.1789988                  |
 
 > *Les résultats sont répété plusieurs fois puis moyennés.*<br>
 
@@ -329,11 +329,6 @@ On remarque que la fonction `lu` est beaucoup plus rapide mais elle est moins pr
 Cependant lorsque l'on ne demande pas _la matrice de permutation_ à `lu`, les erreurs redeviennent correctes (exemple pour *n = 100* : `erreur = 1.241D-16`).<br>
 Comparé à la méthode `1b`, `mylu` ne demande que 2 fois plus de temps mais gagne jusqu'à 3 chiffres significatifs sur l'erreur grâce aux pivots bien choisis.
 
-# Annexe
+## Annexe
 
-<br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br>
-<br><br><br><br><br><br><br><br><br><br><br>
- 
- 
+code source : https://github.com/ggdoe/tp-cn-2-3-ggdoe
